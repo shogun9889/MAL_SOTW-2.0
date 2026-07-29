@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAL Club - Media Room Archive</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="data.js"></script>
+</head>
+<body>
+
+    <!-- THE ROOM VIEWPORT -->
+    <div id="camera-viewport">
+        
+        <!-- THE EXPANDED WALL UNIT (13 Shelves + TV Center Bridge) -->
+        <div id="media-center">
+            
+            <!-- TOP ROW (Bridge above TV) -->
+            <div class="shelf-slot" style="grid-row: 1; grid-column: 1;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-0"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-0">SHELF 1</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-0"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 1; grid-column: 2;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-1"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-1">SHELF 2</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-1"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 1; grid-column: 3;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-2"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-2">SHELF 3</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-2"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 1; grid-column: 4;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-3"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-3">SHELF 4</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-3"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 1; grid-column: 5;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-4"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-4">SHELF 5</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-4"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+
+            <!-- MIDDLE ROW -->
+            <div class="shelf-slot" style="grid-row: 2; grid-column: 1;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-5"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-5">SHELF 6</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-5"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 2; grid-column: 2;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-6"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-6">SHELF 7</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-6"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+
+            <!-- TV ENTERTAINMENT BAY (Spans Middle & Bottom Center) -->
+            <div id="tv-unit" style="grid-row: 2 / span 2; grid-column: 3;" onclick="zoomCameraTo(this, 1.8)">
+                <div id="tv-frame">
+                    <div id="tv-screen">
+                        <div class="tv-standby">
+                            <div class="tv-power-icon">📺</div>
+                            <p>SELECT A CD TO PLAY</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tv-console-table">
+                    <div class="console-receiver">
+                        <span class="led-light"></span>
+                        <span class="led-light blue"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shelf-slot" style="grid-row: 2; grid-column: 4;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-7"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-7">SHELF 8</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-7"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 2; grid-column: 5;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-8"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-8">SHELF 9</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-8"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+
+            <!-- BOTTOM ROW -->
+            <div class="shelf-slot" style="grid-row: 3; grid-column: 1;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-9"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-9">SHELF 10</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-9"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 3; grid-column: 2;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-10"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-10">SHELF 11</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-10"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 3; grid-column: 4;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-11"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-11">SHELF 12</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-11"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+            <div class="shelf-slot" style="grid-row: 3; grid-column: 5;" onclick="zoomCameraTo(this, 2.5)">
+                <div class="golden-plaque" id="tag-12"><span class="screw top-l"></span><span class="screw top-r"></span><span class="screw bot-l"></span><span class="screw bot-r"></span><span class="plaque-text" id="text-12">SHELF 13</span></div>
+                <div class="shelf-inner"><div class="shelf-content" id="shelf-12"></div></div><div class="shelf-wood-ledge"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- UI Overlay Controls -->
+    <button id="zoom-out-btn" onclick="resetCamera()">← Return to Full Room</button>
+
+    <!-- 3D INTERACTIVE JEWEL CASE POP-UP -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="cd-case-3d" id="interactive-case">
+            <div class="jewel-box-rotation-wrapper" id="rotation-wrapper">
+
+                <!-- Left Lid (Booklet) -->
+                <div class="jewel-lid" id="jewel-lid">
+                    <div class="cover-front">
+                        <div class="jewel-acrylic-edge"></div>
+                        <div class="booklet-wrapper"><img id="modal-cover-img" src="" alt="Cover Art"></div>
+                        <div class="jewel-tab tab-top"></div>
+                        <div class="jewel-tab tab-bottom"></div>
+                        <div class="hyper-plastic-glare"></div>
+                    </div>
+                    <div class="cover-back">
+                        <h3>TRACK DETAILS</h3>
+                        <p><strong>Title:</strong> <span id="info-title"></span></p>
+                        <p><strong>Submitted by:</strong> <span id="info-submitter"></span></p>
+                        <h3>SCORE EVALUATION</h3>
+                        <div class="left-score-display" id="info-mean">--</div>
+                    </div>
+                </div>
+
+                <!-- Right Tray (CD) -->
+                <div class="jewel-tray">
+                    <div class="jewel-acrylic-edge"></div>
+                    <div class="tray-inner-mold">
+                        <div class="tray-center-teeth"></div>
+                        <a id="info-link" href="#" class="cd-link-wrapper" title="Click CD to Play on TV">
+                            <div class="spinning-cd-disc">
+                                <img id="modal-cd-label-img" src="" alt="CD Label Art" class="cd-center-label-art">
+                                <div class="cd-center-spindle-hole"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SONGS_PER_SHELF = 16; // Increased capacity for 1 more song per shelf
+        let isZoomedIn = false;
+        let shelfSlotCoords = { transX: 0, transY: 0, scaleX: 1, scaleY: 1 };
+        let activeShelfSpine = null;
+
+        window.onload = () => {
+            loadCDLibrary();
+            window.addEventListener('resize', autoFitRoom);
+            autoFitRoom();
+        };
+
+        function autoFitRoom() {
+            if (isZoomedIn) return;
+            const world = document.getElementById('media-center');
+            const scale = Math.min((window.innerWidth - 40) / 1380, (window.innerHeight - 40) / 720, 1);
+            world.style.transform = `translate(0px, 0px) scale(${scale})`;
+        }
+
+        function loadCDLibrary() {
+            const shelfChunks = [];
+            for (let i = 0; i < songDatabase.length; i += SONGS_PER_SHELF) {
+                shelfChunks.push(songDatabase.slice(i, i + SONGS_PER_SHELF));
+            }
+
+            // Loop through all 13 available shelves
+            for (let shelfIdx = 0; shelfIdx < 13; shelfIdx++) {
+                const shelfContainer = document.getElementById(`shelf-${shelfIdx}`);
+                const plaqueText = document.getElementById(`text-${shelfIdx}`);
+                const chunk = shelfChunks[shelfIdx];
+
+                if (chunk && chunk.length > 0) {
+                    const firstDate = chunk[0].startDate || '';
+                    plaqueText.innerText = firstDate ? `SHELF ${shelfIdx + 1} • ${firstDate.slice(0,7)}` : `SHELF ${shelfIdx + 1}`;
+
+                    chunk.forEach((song) => {
+                        const imagePath = `covers/${song.startDate}.png`;
+                        const cdElement = document.createElement('div');
+                        cdElement.className = 'cd-item';
+                        cdElement.innerHTML = `
+                            <div class="shelf-case">
+                                <img src="${imagePath}" onerror="this.src='covers/default-placeholder.png'" alt="${song.title}">
+                                <div class="shelf-label">${song.title.split(' by ')[0]}</div>
+                                <div class="plastic-shine"></div>
+                            </div>
+                        `;
+                        cdElement.addEventListener('click', (e) => {
+                            e.stopPropagation(); 
+                            openModal(cdElement.querySelector('.shelf-case'), imagePath, song);
+                        });
+                        shelfContainer.appendChild(cdElement);
+                    });
+                } else {
+                    plaqueText.innerText = `SHELF ${shelfIdx + 1} (EMPTY)`;
+                }
+            }
+        }
+
+        function zoomCameraTo(targetElement, targetScale) {
+            if (isZoomedIn) return;
+
+            const world = document.getElementById('media-center');
+            const currentScale = world.getBoundingClientRect().width / world.offsetWidth;
+            
+            const targetRect = targetElement.getBoundingClientRect();
+            const worldRect = world.getBoundingClientRect();
+
+            const targetCenterX = targetRect.left + (targetRect.width / 2);
+            const targetCenterY = targetRect.top + (targetRect.height / 2);
+            const worldCenterX = worldRect.left + (worldRect.width / 2);
+            const worldCenterY = worldRect.top + (worldRect.height / 2);
+
+            const unscaledDx = (targetCenterX - worldCenterX) / currentScale;
+            const unscaledDy = (targetCenterY - worldCenterY) / currentScale;
+
+            const translateX = -unscaledDx * targetScale;
+            const translateY = -unscaledDy * targetScale;
+
+            world.style.transform = `translate(${translateX}px, ${translateY}px) scale(${targetScale})`;
+            
+            document.getElementById('zoom-out-btn').classList.add('show');
+            isZoomedIn = true;
+        }
+
+        function resetCamera() {
+            document.getElementById('zoom-out-btn').classList.remove('show');
+            isZoomedIn = false;
+            autoFitRoom();
+        }
+
+        function openModal(spineElement, imagePath, song) {
+            activeShelfSpine = spineElement; 
+            const rect = spineElement.getBoundingClientRect();
+            const isMobile = window.innerWidth <= 600;
+            const targetScale = isMobile ? 0.52 : 1;
+
+            const modalWidth = 360 * targetScale;
+            const modalHeight = 320 * targetScale;
+            const modalLeft = (window.innerWidth - modalWidth) / 2;
+            const modalTop = (window.innerHeight - modalHeight) / 2;
+            
+            shelfSlotCoords = {
+                transX: rect.left - modalLeft,
+                transY: rect.top - modalTop,
+                scaleX: rect.width / modalWidth,
+                scaleY: rect.height / modalHeight
+            };
+            
+            const case3D = document.getElementById('interactive-case');
+            const rotWrapper = document.getElementById('rotation-wrapper');
+            
+            case3D.style.transition = 'none';
+            rotWrapper.style.transition = 'none';
+            case3D.style.transform = `translate(${shelfSlotCoords.transX}px, ${shelfSlotCoords.transY}px) scale(${shelfSlotCoords.scaleX}, ${shelfSlotCoords.scaleY})`;
+            case3D.style.opacity = '1'; 
+            rotWrapper.style.transform = 'rotateY(-90deg)'; 
+
+            document.getElementById('modal-cover-img').src = imagePath;
+            document.getElementById('modal-cd-label-img').src = imagePath;
+            document.getElementById('info-title').innerText = song.title;
+            document.getElementById('info-submitter').innerText = song.submitter;
+            document.getElementById('info-mean').innerText = song.meanScore;
+
+            const playBtn = document.getElementById('info-link');
+            playBtn.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                playOnTV(song.link);
+            };
+
+            document.getElementById('modal-overlay').classList.add('active');
+            case3D.offsetHeight; 
+            activeShelfSpine.style.opacity = '0';
+            
+            requestAnimationFrame(() => {
+                case3D.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease';
+                rotWrapper.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+                case3D.style.transform = `translate(0, 0) scale(${targetScale})`;
+                rotWrapper.style.transform = 'rotateY(0deg)';
+            });
+        }
+
+        function closeModal() {
+            const case3D = document.getElementById('interactive-case');
+            const rotWrapper = document.getElementById('rotation-wrapper');
+            document.getElementById('jewel-lid').classList.remove('open');
+            
+            case3D.style.transition = 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease';
+            rotWrapper.style.transition = 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)';
+            case3D.style.transform = `translate(${shelfSlotCoords.transX}px, ${shelfSlotCoords.transY}px) scale(${shelfSlotCoords.scaleX}, ${shelfSlotCoords.scaleY})`;
+            rotWrapper.style.transform = 'rotateY(-90deg)';
+            
+            document.getElementById('modal-overlay').classList.remove('active');
+
+            setTimeout(() => {
+                if (activeShelfSpine) activeShelfSpine.style.opacity = '1';
+                case3D.style.opacity = '0'; 
+            }, 700);
+        }
+
+        document.getElementById('modal-overlay').addEventListener('click', (e) => {
+            if (e.target.id === 'modal-overlay') closeModal();
+        });
+        document.getElementById('interactive-case').addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            document.getElementById('jewel-lid').classList.toggle('open');
+        });
+
+        function playOnTV(youtubeUrl) {
+            closeModal();
+            let videoId = '';
+            if (youtubeUrl.includes('youtu.be/')) videoId = youtubeUrl.split('youtu.be/')[1].split('?')[0];
+            else if (youtubeUrl.includes('watch?v=')) videoId = youtubeUrl.split('watch?v=')[1].split('&')[0];
+            else if (youtubeUrl.includes('shorts/')) videoId = youtubeUrl.split('shorts/')[1].split('?')[0];
+
+            const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+
+            setTimeout(() => {
+                isZoomedIn = false;
+                zoomCameraTo(document.getElementById('tv-unit'), 1.8);
+                
+                const tvScreen = document.getElementById('tv-screen');
+                tvScreen.innerHTML = `
+                    <iframe 
+                        width="100%" height="100%" src="${embedUrl}" title="YouTube player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <a href="${youtubeUrl}" target="_blank" class="tv-fallback-btn" title="Open directly on YouTube">↗ Open YouTube</a>
+                `;
+            }, 500);
+        }
+    </script>
+</body>
+</html>

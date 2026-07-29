@@ -1,0 +1,231 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0; overflow: hidden;
+    background: #dfdad0;
+    background-image: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.4) 0%, transparent 70%), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 30px;
+    font-family: 'Segoe UI', sans-serif; user-select: none;
+}
+
+#camera-viewport {
+    width: 100vw; height: 100vh;
+    display: flex; justify-content: center; align-items: center; position: relative;
+}
+
+/* ===================================================
+   COMPACT WALL UNIT (14 Shelves, Balanced 6-Column Grid,
+   TV Centered on Columns 3-4)
+   =================================================== */
+#media-center {
+    width: 1320px;
+    height: 720px;
+    background: #f5f2eb; border: 16px solid #fdfbf7; border-radius: 4px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0,0,0,0.08);
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 105px 1fr 1fr;
+    gap: 12px; padding: 14px;
+    
+    transform-origin: center center;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.shelf-slot {
+    background: #181614; position: relative; cursor: pointer; border-radius: 2px;
+    box-shadow: inset 0 6px 15px rgba(0,0,0,0.85); display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden; transition: filter 0.25s ease;
+}
+.shelf-slot:hover { filter: brightness(1.12); }
+.shelf-inner { width: 100%; height: 100%; display: flex; align-items: flex-end; padding: 0 6px; position: relative; z-index: 2; }
+.shelf-content {
+    display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end;
+    gap: 1px; width: 100%; height: 68px; /* Shorter shelves as requested */
+}
+
+/* ===================================================
+   REALISTIC WOOD & GOLDEN PLAQUE LABELS
+   =================================================== */
+.golden-plaque {
+    position: absolute; top: 6px; left: 8px;
+    background: #4a2e18; border: 2px solid #2b1a0e; border-radius: 3px;
+    padding: 3px 5px; box-shadow: 0 3px 6px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.2);
+    z-index: 5; display: flex; align-items: center; justify-content: center; pointer-events: none;
+}
+.plaque-text {
+    background: linear-gradient(135deg, #e6ca65 0%, #c59b27 40%, #f7e8a2 70%, #a67c1e 100%);
+    border: 1px solid #7a5c12; border-radius: 2px; padding: 1px 6px;
+    font-family: 'Georgia', serif; font-size: 0.52rem; font-weight: bold; color: #3a2505;
+    letter-spacing: 0.5px; text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.7); white-space: nowrap;
+}
+.screw {
+    position: absolute; width: 4px; height: 4px;
+    background: radial-gradient(circle, #fff 20%, #b8860b 60%, #3a2505 100%);
+    border-radius: 50%; box-shadow: 0 1px 1px rgba(0,0,0,0.6); z-index: 6;
+}
+.screw.top-l { top: 2px; left: 2px; }
+.screw.top-r { top: 2px; right: 2px; }
+.screw.bot-l { bottom: 2px; left: 2px; }
+.screw.bot-r { bottom: 2px; right: 2px; }
+
+.shelf-wood-ledge {
+    height: 8px; background: linear-gradient(to bottom, #ded7cb 0%, #b5ab9a 100%);
+    border-top: 1px solid #f0eae1; box-shadow: 0 -2px 4px rgba(0,0,0,0.4); z-index: 4;
+}
+
+/* ===================================================
+   TV ENTERTAINMENT BAY
+   =================================================== */
+#tv-unit {
+    background: #201e1c; border-radius: 4px; box-shadow: inset 0 10px 30px rgba(0,0,0,0.9);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 18px; cursor: pointer; position: relative;
+}
+
+#tv-frame {
+    width: 100%; aspect-ratio: 16 / 9; background: #090909; border: 8px solid #1a1a1a;
+    border-bottom-width: 14px; border-radius: 6px; box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    position: relative; overflow: hidden;
+}
+
+#tv-screen { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #050505; position: relative; }
+.tv-standby { text-align: center; color: #444; font-family: monospace; }
+.tv-power-icon { font-size: 1.8rem; margin-bottom: 4px; opacity: 0.5; }
+.tv-standby p { margin: 0; font-size: 0.7rem; letter-spacing: 1px; }
+
+.tv-fallback-btn {
+    position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: #fff;
+    padding: 4px 8px; font-size: 0.65rem; text-decoration: none; border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.2); z-index: 10;
+}
+.tv-fallback-btn:hover { background: #ff0000; }
+
+.tv-console-table {
+    width: 80%; height: 20px; background: #111; margin-top: 12px; border-radius: 3px;
+    display: flex; align-items: center; padding: 0 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.console-receiver { display: flex; gap: 6px; }
+.led-light { width: 5px; height: 5px; border-radius: 50%; background: #ff3b30; box-shadow: 0 0 4px #ff3b30; }
+.led-light.blue { background: #007aff; box-shadow: 0 0 4px #007aff; }
+
+/* ===================================================
+   CD CASES & UI CONTROLS
+   =================================================== */
+.cd-item { width: 11px; height: 62px; position: relative; z-index: 2; flex-shrink: 0; }
+.shelf-case {
+    width: 100%; height: 100%; background: #222; border-left: 1px solid rgba(255, 255, 255, 0.45);
+    border-right: 1px solid rgba(0, 0, 0, 0.6); box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    position: relative; overflow: hidden; transition: transform 0.2s ease, filter 0.2s ease;
+    display: flex; justify-content: center; align-items: center;
+}
+.shelf-case img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); }
+.shelf-label {
+    position: relative; z-index: 2; writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; width: 9px; font-size: 0.38rem; font-weight: 800; color: #111;
+    background: rgba(255, 255, 255, 0.88); padding: 3px 0px; border-radius: 1px;
+}
+.cd-item:hover .shelf-case { transform: translateY(-6px) scale(1.05); z-index: 10; box-shadow: 0 8px 15px rgba(0,0,0,0.8); filter: brightness(1.15); }
+
+#zoom-out-btn {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); padding: 10px 22px;
+    background: #2c251e; color: #f0eae1; font-size: 0.85rem; font-weight: 600; border: 1px solid #4a3e31;
+    border-radius: 20px; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.3); opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.2s ease; z-index: 1000;
+}
+#zoom-out-btn.show { opacity: 1; pointer-events: auto; }
+#zoom-out-btn:hover { background: #4a3e31; transform: translateX(-50%) scale(1.04); }
+
+/* ===================================================
+   3D POP-UP JEWEL CASE MODAL
+   =================================================== */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(12, 10, 8, 0); backdrop-filter: blur(0px); display: flex; justify-content: center; align-items: center; pointer-events: none; transition: background 0.5s ease, backdrop-filter 0.5s ease; z-index: 999; }
+.modal-overlay.active { background: rgba(12, 10, 8, 0.82); backdrop-filter: blur(10px); pointer-events: auto; }
+.cd-case-3d { position: relative; width: 360px; height: 320px; perspective: 1500px; transform-origin: 0 0; opacity: 0; pointer-events: none; }
+.modal-overlay.active .cd-case-3d { pointer-events: auto; }
+.jewel-box-rotation-wrapper { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
+.jewel-acrylic-edge { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 5px solid rgba(255, 255, 255, 0.35); border-top: 4px solid rgba(255, 255, 255, 0.5); border-radius: 6px; box-shadow: inset 0 0 0 2px rgba(0,0,0,0.2), 0 15px 35px rgba(0,0,0,0.6); pointer-events: none; z-index: 20; }
+.jewel-lid { position: absolute; width: 100%; height: 100%; transform-origin: left center; transform-style: preserve-3d; transition: transform 0.75s cubic-bezier(0.2, 1, 0.2, 1); z-index: 10; cursor: pointer; }
+.jewel-lid.open { transform: rotateY(-145deg); }
+.cover-front, .cover-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 6px; box-sizing: border-box; }
+.cover-front { background: rgba(255,255,255,0.08); padding: 8px 14px 8px 12px; }
+.cover-front::before { content: ""; position: absolute; top: 4px; left: 4px; bottom: 4px; width: 6px; background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1)); z-index: 22; }
+.booklet-wrapper { width: 100%; height: 100%; overflow: hidden; background: #111; border-radius: 2px; }
+.booklet-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.jewel-tab { position: absolute; right: 5px; width: 10px; height: 18px; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.4); border-left: none; border-radius: 0 8px 8px 0; z-index: 21; }
+.tab-top { top: 65px; } .tab-bottom { bottom: 65px; }
+.hyper-plastic-glare { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, transparent 35%, rgba(255,255,255,0.35) 38%, transparent 42%, rgba(255,255,255,0.15) 50%, transparent 52%); z-index: 25; pointer-events: none; border-radius: 6px; }
+.cover-back { background: #fbfaf5; color: #1c1105; transform: rotateY(180deg); padding: 26px 28px; border: 8px solid rgba(255,255,255,0.35); box-shadow: inset 0 0 8px rgba(0,0,0,0.15); }
+.cover-back h3 { border-bottom: 2px solid #8c765c; padding-bottom: 4px; color: #4a321a; font-size: 0.95rem; margin-top: 10px;}
+.left-score-display { font-size: 2.2rem; font-weight: 800; color: #2c1a04; margin-top: 4px; }
+.jewel-tray { position: absolute; width: 100%; height: 100%; background: #181818; border-radius: 6px; z-index: 1; box-sizing: border-box; }
+.tray-inner-mold { position: absolute; top: 6px; left: 8px; right: 8px; bottom: 6px; background: #202020; border: 1px solid #101010; border-radius: 4px; box-shadow: inset 0 4px 12px rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; }
+.tray-center-teeth { position: absolute; width: 50px; height: 50px; border-radius: 50%; background: repeating-conic-gradient(from 0deg, #151515 0deg 30deg, #282828 30deg 60deg); box-shadow: 0 0 0 6px #1a1a1a, inset 0 0 8px rgba(0,0,0,0.8), 0 4px 10px rgba(0,0,0,0.5); z-index: 2; }
+.cd-link-wrapper { text-decoration: none; display: block; cursor: pointer; z-index: 5; position: relative; }
+.spinning-cd-disc { width: 276px; height: 276px; border-radius: 50%; background: #111; background-image: radial-gradient(circle, transparent 96%, rgba(255,255,255,0.3) 97%, rgba(0,0,0,0.4) 100%); box-shadow: 0 12px 32px rgba(0,0,0,0.65), inset 0 0 0 1px rgba(255,255,255,0.15); animation: cd-rotation-loop 14s linear infinite; display: flex; justify-content: center; align-items: center; transition: transform 0.25s ease; }
+.spinning-cd-disc::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: conic-gradient(from 45deg, transparent 0%, rgba(255,0,128,0.05) 15%, transparent 40%, rgba(0,255,255,0.07) 75%, transparent 100%); z-index: 5; pointer-events: none; }
+.cd-link-wrapper:hover .spinning-cd-disc { transform: scale(1.03) translateZ(15px); }
+.cd-center-label-art { width: 266px; height: 266px; border-radius: 50%; object-fit: cover; z-index: 4; pointer-events: none; -webkit-mask-image: radial-gradient(circle, transparent 23%, black 23.5%); mask-image: radial-gradient(circle, transparent 23%, black 23.5%); }
+.cd-center-spindle-hole { position: absolute; width: 34px; height: 34px; background: #202020; border-radius: 50%; box-shadow: inset 0 4px 8px rgba(0,0,0,0.95), 0 0 0 2px rgba(255,255,255,0.18), 0 0 0 14px rgba(255,255,255,0.04); z-index: 6; }
+@keyframes cd-rotation-loop { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+/* ===================================================
+   REQUESTED LAYOUT FIX
+   - Keep the original six-box top row unchanged.
+   - Split only the side towers into three shorter rows.
+   - Keep the original colours/materials.
+   - Let the TV fill the centre bay instead of shrinking.
+   =================================================== */
+#media-center {
+    width: 1320px;
+    height: 720px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 105px repeat(3, 1fr);
+    gap: 12px;
+    padding: 14px;
+}
+
+/* Side shelves are now short, consistent bookcase cubbies. */
+.shelf-slot {
+    min-height: 0;
+}
+
+.shelf-inner {
+    padding-top: 28px;
+}
+
+.shelf-content {
+    height: 68px;
+}
+
+/* The central opening spans all three lower rows. */
+#tv-unit {
+    padding: 10px 12px 12px;
+    justify-content: center;
+}
+
+/* Remove the old max-size feeling: the TV uses almost all available width. */
+#tv-frame {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9;
+    border-width: 8px;
+    border-bottom-width: 14px;
+}
+
+.tv-console-table {
+    width: 86%;
+    margin-top: 10px;
+}
+
+/* Keep discs proportional inside the newly shorter side shelves. */
+.cd-item {
+    width: 11px;
+    height: 62px;
+}
+
+/* Responsive scaling without changing the internal grid proportions. */
+@media (max-width: 700px) {
+    #camera-viewport { padding: 8px; }
+}
