@@ -117,6 +117,6 @@ const songDatabase = [
         submitter: "Jokobo",
         title: "Hoshi no Arika by Falcom Sound Team JDK (the vocalist is Hideaki Hamada)",
         link: "https://www.youtube.com/watch?v=rQ_1X3fDn-M",
-        meanScore: "N/A"
+        meanScore: "4.5/5"
     },
 ];
