@@ -119,4 +119,20 @@ const songDatabase = [
         link: "https://www.youtube.com/watch?v=rQ_1X3fDn-M",
         meanScore: "4.5/5"
     },
+	{
+        startDate: "03-08-2026",
+        endDate: "09-08-2026",
+        submitter: "Duck",
+        title: "Colorful by ClariS",
+        link: "https://youtu.be/GDnLHd2Ei3Y?si=InoWpLMk-8kspOaF",
+        meanScore: "4.2/5"
+    },
+    {
+        startDate: "10-08-2026",
+        endDate: "16-08-2026",
+        submitter: "Lady Avalon",
+        title: "Hikari (Re-Recording)",
+        link: "https://www.youtube.com/watch?v=AlMdDpUWFFI",
+        meanScore: "n/a"
+    },
 ];
