@@ -133,6 +133,14 @@ const songDatabase = [
         submitter: "Lady Avalon",
         title: "Hikari (Re-Recording)",
         link: "https://www.youtube.com/watch?v=AlMdDpUWFFI",
-        meanScore: "n/a"
+        meanScore: "4/5"
+    },
+    {
+        startDate: "17-08-2026",
+        endDate: "23-08-2026",
+        submitter: "naru",
+        title: "Black Catcher By Vickeblanka",
+        link: "https://youtu.be/hP6VM6YAMIE?si=kZMvM6cCTLIDcUbg",
+        meanScore: "4.17/5"
     },
 ];
