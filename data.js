@@ -139,8 +139,24 @@ const songDatabase = [
         startDate: "17-08-2026",
         endDate: "23-08-2026",
         submitter: "naru",
-        title: "Black Catcher By Vickeblanka",
+        title: "Black Catcher by Vickeblanka",
         link: "https://youtu.be/hP6VM6YAMIE?si=kZMvM6cCTLIDcUbg",
         meanScore: "4.17/5"
+    },
+    {
+        startDate: "24-08-2026",
+        endDate: "30-08-2026",
+        submitter: "Akane",
+        title: "Against the Tide by Forts & Obadiah Brown Beach",
+        link: "https://youtu.be/Yr1RlcoqXTg?si=3Z4C4mPlXHcKBgT_",
+        meanScore: "4/5"
+    },
+    {
+        startDate: "31-08-2026",
+        endDate: "06-09-2026",
+        submitter: "Shogun",
+        title: "Ougon no Kagayaki by ReoNa",
+        link: "https://youtu.be/7LC2hSxxX8o?si=_NORxvhK4X6qxLRw",
+        meanScore: "4.25/5"
     },
 ];
