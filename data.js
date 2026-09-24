@@ -159,4 +159,20 @@ const songDatabase = [
         link: "https://youtu.be/7LC2hSxxX8o?si=_NORxvhK4X6qxLRw",
         meanScore: "4.25/5"
     },
+    {
+    startDate: "07-09-2026",
+    endDate: "13-09-2026",
+    submitter: "B1G2B3N",
+    title: "Tourniquet by Evanescence",
+    link: "https://youtu.be/DsG42KCUrZ8?si=LC0_5cqvxnr2faEa",
+    meanScore: "4.2/5"
+    },
+    {
+    startDate: "14-09-2026",
+    endDate: "20-09-2026",
+    submitter: "Jokobo",
+    title: "花咲く勇気 by Yuuki Aoi and Kotobuki Minako",
+    link: "https://www.youtube.com/watch?v=Q5LXI1a3hwg",
+    meanScore: "4.5/5"
+    },
 ];
