@@ -175,4 +175,12 @@ const songDatabase = [
     link: "https://www.youtube.com/watch?v=Q5LXI1a3hwg",
     meanScore: "4.5/5"
     },
+    {
+    startDate: "21-09-2026",
+    endDate: "27-09-2026",
+    submitter: "Duck",
+    title: "Inori, Owareba by Mika Nakashima",
+    link: "https://www.youtube.com/watch?v=nxRzMbPv42w",
+    meanScore: "4.29/5"
+    },
 ];
