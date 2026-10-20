@@ -183,4 +183,20 @@ const songDatabase = [
     link: "https://www.youtube.com/watch?v=nxRzMbPv42w",
     meanScore: "4.29/5"
     },
+{
+    startDate: "28-09-2026",
+    endDate: "04-10-2026",
+    submitter: "naru",
+    title: "Talavou Finemui by Ya Boy Mo",
+    link: "https://www.youtube.com/watch?v=zatXLTM4UOg",
+    meanScore: "2.6/5"
+},
+{
+    startDate: "05-10-2026",
+    endDate: "18-10-2026",
+    submitter: "Akane",
+    title: "Ode to the Nameless Martyr by Thena A and Tarokiki",
+    link: "https://www.youtube.com/watch?v=AuMcCiwNazo",
+    meanScore: "3.4/5"
+},
 ];
